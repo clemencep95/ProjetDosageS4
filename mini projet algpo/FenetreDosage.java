@@ -28,6 +28,9 @@ public class FenetreDosage extends JFrame {
         FenetrePrincipale1.setVisible(true);
         
         FenetrePrincipale1.repaint();
+
+		//test 
+		int modif = 1;
         
         
 		
