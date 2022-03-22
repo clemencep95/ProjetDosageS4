@@ -18,19 +18,23 @@ public class FenetreDosage extends JFrame {
 	public JLabel conc2;
 	public JLabel conc1;
 	public JLabel VolIns;
+
+	public JLabel titrage;
 	
 	public FenetreDosage(){
 		
-		FenetrePrincipale1 = new JFrame () ;
-		FenetrePrincipale1.setTitle("Dosage");
-		FenetrePrincipale1.setLayout(null);
-		FenetrePrincipale1.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        FenetrePrincipale1.setVisible(true);
-        
-        FenetrePrincipale1.repaint();
+		this.setTitle("Dosage");
+		this.setLayout(null);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-		//test 
-		int modif = 1;
+		ImageIcon skinTitrage = new ImageIcon("titrage2.gif");
+		titrage = new JLabel(skinTitrage);
+		titrage.setBounds(100,100,skinTitrage.getIconWidth(),skinTitrage.getIconHeight());
+		this.add(titrage);
+
+
+        this.setVisible(true);
+
         
         
 		
