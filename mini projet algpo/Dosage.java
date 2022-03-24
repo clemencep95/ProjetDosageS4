@@ -14,7 +14,10 @@ public class Dosage extends JFrame {
 	
 	public static void main (String[]arg){
 		FenetrePrincipale fp = new FenetrePrincipale();
-		int n = 0;
+		Reaction R1 = new Reaction();
+		System.out.println("V0= "+R1.V0);
+		System.out.println("Veq= "+R1.Veq);
+
 	}
     
 
