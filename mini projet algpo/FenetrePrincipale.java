@@ -43,28 +43,28 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     
 	public FenetrePrincipale(){
 		
-		FenetrePrincipale1 = new JFrame();
-		FenetrePrincipale1.setTitle("Dosage");
-		FenetrePrincipale1.setLayout(null);
-		FenetrePrincipale1.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        FenetrePrincipale1.setVisible(true);
+		this.setTitle("Dosage");
+		this.setLayout(null);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setVisible(true);
         
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
-		Conteneur.setBounds(0,0,1600,1500);
-        Conteneur.setBackground(new Color(51,153,255));
-        Conteneur.setVisible(true);
-		FenetrePrincipale1.add(Conteneur);
+		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
+       	Conteneur.setBackground(new Color(51,153,255));
+        
 		
-		textArea = new JTextArea(" Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On 	   	             s'occupe du reste !");
+		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(new Color(51,153,255));
 		textArea.setForeground(Color.white);
-		textArea.setBounds(500,100,600,100);
+		textArea.setBounds(500,100,600,200);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
 		Conteneur.add(textArea);
-		textArea.setFont(new java.awt.Font("Liberation Serif", Font.BOLD, 20));
+		textArea.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
+
 		
 			
 		sol1 = new JButton("Acide");
@@ -105,14 +105,13 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
 		
-		ImageIcon skinScientifique = new ImageIcon("scientifique.gif.gif");
+		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
 		scientifique = new JLabel(skinScientifique);
-		scientifique.setBounds(0,0,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
-		scientifique.setVisible(true);
-		this.add(scientifique);
+		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
+		Conteneur.add(scientifique);
 		
 		
-		FenetrePrincipale1.add(Conteneur);
+		this.add(Conteneur);
 		Conteneur.repaint();
 
 	}
