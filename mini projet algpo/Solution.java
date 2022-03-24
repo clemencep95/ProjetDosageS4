@@ -8,7 +8,7 @@ public class Solution {
     public boolean titrante;
     
 
-    public Solution (boolean t, String n, double v, boolean titre, double c) {
+    public Solution (boolean t, String n, double c, boolean titre, double v) {
         this.type = t;
         this.nom=n;
         this.concentration = c;
