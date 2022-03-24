@@ -15,11 +15,11 @@ public class Solution {
         this.volume = v;
         this.titrante=titre;
     }
-    public Solution (boolean t, String n, double v, boolean titre){
+    public Solution (boolean t, String n, double c, boolean titre){
         this.type = t;
         this.nom=n;
-        this.concentration = -1.0;
-        this.volume=v;
+        this.concentration = c;
+        this.volume=-1.0;
         this.titrante=titre;
     }
 
