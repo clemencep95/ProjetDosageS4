@@ -13,6 +13,8 @@ import java.awt.Font;
 public class Dosage extends JFrame {
 	
 	public static void main (String[]arg){
+		int t;
+		int cccccc;
 		
 		FenetrePrincipale fp = new FenetrePrincipale();
 
