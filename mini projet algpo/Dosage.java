@@ -18,7 +18,8 @@ public class Dosage extends JFrame {
 		int testnouveau;
 		int caca;
 		int nique;
-		
+		int bitch;
+
 
 		FenetrePrincipale fp = new FenetrePrincipale();
 		int n = 0;
