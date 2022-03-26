@@ -40,6 +40,8 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JPanel contentPane;
     public JLabel imageLabel = new JLabel();
     public JLabel headerLabel = new JLabel();
+	public JLabel soltitrante;
+	public JLabel soltitree;
     
 	public FenetrePrincipale(){
 		
@@ -65,32 +67,42 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		textArea.setFont(new Font("Liberation Serif", Font.BOLD, 20));
 		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 
-		
+		soltitrante = new JLabel("Choix de la solution titrante");
+		soltitrante.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		soltitrante.setBounds(20,400,940,40);
+		soltitrante.setForeground(Color.white);
+		Conteneur.add(soltitrante);
 			
-		sol1 = new JButton("Acide");
-		sol1.setBounds(200,400,150,40);
+		sol1 = new JButton("Permenganate de potassium");
+		sol1.setBounds(300,400,250,40);
 		sol1.addActionListener(this);
 		Conteneur.add(sol1);
 		
 		text1 = new JTextField();
-		text1.setBounds(500,400,150,40);
+		text1.setBounds(600,400,150,40);
 		text1.setBackground(Color.white);
 		text1.addActionListener(this);
 		Conteneur.add(text1);
+
+		soltitree = new JLabel("Choix de la solution titree");
+		soltitree.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		soltitree.setBounds(20,600,940,40);
+		soltitree.setForeground(Color.white);
+		Conteneur.add(soltitree);
 		
-		conc1 = new JLabel("Concentration de la solution titrante :");
+		conc1 = new JLabel("Sel de Mohr");
 		conc1.setBounds(500,340,940,40);
 		conc1.setForeground(Color.blue);
 		Conteneur.add(conc1);
 		
 	
-		sol2 = new JButton("Base");
-		sol2 .setBounds(200,600,150,40);
+		sol2 = new JButton("Sel de Mohr");
+		sol2 .setBounds(350,600,150,40);
 		sol2.addActionListener(this);
 		Conteneur.add(sol2);
 		
 		text2 = new JTextField();
-		text2.setBounds(500,600,150,40);
+		text2.setBounds(600,600,150,40);
 		text2.setBackground(Color.white);
 		text2.addActionListener(this);
 		Conteneur.add(text2);
