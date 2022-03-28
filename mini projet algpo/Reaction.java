@@ -5,8 +5,8 @@ public class Reaction extends FenetrePrincipale{
     public double V0;
 
     public Reaction () {
-        solA= new Solution ("Permanganate de Potassium",Double.parseDouble(text1.getText()),true);
-        solB= new Solution ("Sel de MOhr", Double.parseDouble(text2.getText()),false);
+        solA= new Solution ("Permanganate de Potassium",conce1,true);
+        solB= new Solution ("Sel de MOhr",conce2,false);
         V0=calculV0(solA,solB);
         Veq=volumeEquivalence(solA,solB);
     }
