@@ -43,7 +43,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JLabel soltitrante;
 	public JLabel soltitree;
     
-	public FenetrePrincipale(){
+	public FenetrePrincipale() {
 		
 		this.setTitle("Dosage");
 		this.setLayout(null);
@@ -122,9 +122,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
 		Conteneur.add(scientifique);
 		
-		
 		this.add(Conteneur);
-		Conteneur.repaint();
+
+
 
 	}
 
