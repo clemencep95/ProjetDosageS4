@@ -73,7 +73,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		soltitrante.setForeground(Color.white);
 		Conteneur.add(soltitrante);
 			
-		sol1 = new JButton("Permanganate de potassium");
+		sol1 = new JButton("Hydroxyde de sodium");
 		sol1.setBounds(300,400,250,40);
 		sol1.addActionListener(this);
 		Conteneur.add(sol1);
@@ -96,7 +96,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.add(conc1);
 		
 	
-		sol2 = new JButton("Sel de Mohr");
+		sol2 = new JButton("Acide Chlorhydrique");
 		sol2 .setBounds(350,600,150,40);
 		sol2.addActionListener(this);
 		Conteneur.add(sol2);
@@ -133,12 +133,16 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		
 		if (e.getSource()==sol1){
 			type1=1;
+			System.out.println(type1);
 		}else if (e.getSource()==sol2){
 			type2=2;
+			System.out.println(type2);
 		} else if (e.getSource()==text1){
 			conce1 = Double.parseDouble(text1.getText());
+			System.out.println(conce1);
 		} else if (e.getSource()==text2){
 			conce2 = Double.parseDouble(text2.getText());
+			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
 				Reaction R1 = new Reaction();

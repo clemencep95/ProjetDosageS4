@@ -18,8 +18,8 @@ public class Reaction extends FenetrePrincipale{
     
 
     public Reaction () {
-        solA= new Solution ("Permanganate de Potassium",conce1,true);
-        solB= new Solution ("Sel de MOhr",conce2,false);
+        solA= new Solution (soltitrante.getText(),conce1,true);
+        solB= new Solution (soltitree.getText(),conce2,false);
         V0=calculV0(solA,solB);
         Veq=volumeEquivalence(solA,solB);
     }
@@ -27,18 +27,18 @@ public class Reaction extends FenetrePrincipale{
     public double volumeEquivalence (Solution A, Solution B){
         double Veq = 0.0;
         if (A.titrante==true){
-            Veq = 2*A.concentration*V0/B.concentration;
+            Veq = A.concentration*V0/B.concentration;
         } else {
-            Veq = 2*B.concentration*V0/A.concentration;
+            Veq = B.concentration*V0/A.concentration;
         }
         return (Veq+Math.random()*0.002-Math.random()*0.002);
     }
 
     public double calculV0 ( Solution A, Solution B){
         if (A.titrante==true) {
-            V0 = B.concentration * 0.024 / (2 * A.concentration);
+            V0 = B.concentration * 0.024 / (A.concentration);
         }else{
-            V0 = A.concentration * 0.024 / (2 * B.concentration);
+            V0 = A.concentration * 0.024 / (B.concentration);
         }
         return (V0+Math.random()*0.002-Math.random()*0.002);
     }
