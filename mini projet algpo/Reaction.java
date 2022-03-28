@@ -1,10 +1,14 @@
 public class Reaction extends FenetrePrincipale{
+    public Solution solA;
+    public Solution solB;
     public double Veq;
     public double V0;
 
-    public Reaction (Solution A, Solution B) {
-        V0=calculV0(A,B);
-        Veq=volumeEquivalence(A,B);
+    public Reaction () {
+        solA= new Solution ("Permanganate de Potassium",Double.parseDouble(text1.getText()),true);
+        solB= new Solution ("Sel de MOhr", Double.parseDouble(text2.getText()),false);
+        V0=calculV0(solA,solB);
+        Veq=volumeEquivalence(solA,solB);
     }
 
     public double volumeEquivalence (Solution A, Solution B){
