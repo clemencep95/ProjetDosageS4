@@ -7,6 +7,7 @@ public class Solution {
     public boolean titrante;
     
 
+
     public Solution (String n, double c, boolean titre, double v) {
         this.nom=n;
         this.concentration = c;
