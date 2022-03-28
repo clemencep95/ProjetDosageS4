@@ -27,7 +27,7 @@ public class FenetreDosage extends JFrame {
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-		ImageIcon skinTitrage = new ImageIcon("titrage2.gif");
+		ImageIcon skinTitrage = new ImageIcon("equation_reaction.jpg");
 		titrage = new JLabel(skinTitrage);
 		titrage.setBounds(100,100,skinTitrage.getIconWidth(),skinTitrage.getIconHeight());
 		this.add(titrage);
