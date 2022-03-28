@@ -7,12 +7,10 @@ public class Reaction extends FenetrePrincipale{
     public Reaction () {
         solA= new Solution (soltitrante.getText(),conce1,true);
         solB= new Solution (soltitree.getText(),conce2,false);
-        V0=calculV0(solA,solB);
-        Veq=volumeEquivalence(solA,solB);
     }
 
     public double volumeEquivalence (Solution A, Solution B){
-        double Veq = 0.0;
+        Veq = 0.0;
         if (A.titrante==true){
             Veq = A.concentration*V0/B.concentration;
         } else {
@@ -22,6 +20,7 @@ public class Reaction extends FenetrePrincipale{
     }
 
     public double calculV0 ( Solution A, Solution B){
+        V0 = 0.0;
         if (A.titrante==true) {
             V0 = B.concentration * 0.024 / (A.concentration);
         }else{

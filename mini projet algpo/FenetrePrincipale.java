@@ -146,17 +146,18 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
 				Reaction R1 = new Reaction();
-				System.out.println("V0= "+R1.V0);
-				System.out.println("Veq= "+R1.Veq);
+				double V0=R1.calculV0(R1.solA,R1.solB);
+				double Veq=R1.volumeEquivalence(R1.solA,R1.solB);
+				System.out.println("V0= "+ V0);
+				System.out.println("Veq= "+ Veq);
 				FenetreDosage f = new FenetreDosage();
 			} else {
 				JLabel erreur = new JLabel("erreur");
 				erreur.setBounds(500,500,1000,100);
 				erreur.setBackground(Color.red);
 				Conteneur.add(erreur);
-				erreur.setVisible(true);
-				
-			} 
+				erreur.setVisible(true);				
+			}
 			 Conteneur.repaint();
 		}
 		
