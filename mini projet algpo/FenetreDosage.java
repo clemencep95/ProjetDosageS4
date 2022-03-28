@@ -41,7 +41,7 @@ public class FenetreDosage extends JFrame {
 		this.add(titrage);
 
 		Toolkit T=Toolkit.getDefaultToolkit();
-		reaction = T.getImage("scientifique.gif"); // 
+		reaction = T.getImage("little-girl.svg"); // 
 
 
 
