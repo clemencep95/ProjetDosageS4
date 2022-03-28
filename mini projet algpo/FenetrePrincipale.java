@@ -73,7 +73,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		soltitrante.setForeground(Color.white);
 		Conteneur.add(soltitrante);
 			
-		sol1 = new JButton("Permenganate de potassium");
+		sol1 = new JButton("Permanganate de potassium");
 		sol1.setBounds(300,400,250,40);
 		sol1.addActionListener(this);
 		Conteneur.add(sol1);
