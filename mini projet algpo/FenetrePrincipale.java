@@ -33,9 +33,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JLabel conc1;
 	public JButton demarrer;
 	int type1 = 0 ;
-	int type2 = 0;
-	double conce1 = 0;
-	double conce2 = 0;
+	int type2 = 0 ;
+	double conce1 ;
+	double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
     public JLabel imageLabel = new JLabel();
@@ -49,6 +49,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
+
+		conce1 = 0.0;
+		conce2 = 0.0;
         
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
@@ -124,14 +127,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		
 		this.add(Conteneur);
 		Conteneur.repaint();
-
-
-
 	}
 
 	public void actionPerformed(ActionEvent e){
-		
-		
 		if (e.getSource()==sol1){
 			type1=1;
 			System.out.println(type1);
@@ -159,11 +157,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			}
 			 Conteneur.repaint();
 		}
-		
-
 	}
-	
-
 }
 	
 
