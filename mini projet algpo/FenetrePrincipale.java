@@ -124,7 +124,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		
 		
 		this.add(Conteneur);
-		Conteneur.repaint();
+		//Conteneur.repaint();
 
 	}
 
