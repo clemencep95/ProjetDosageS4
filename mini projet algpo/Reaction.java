@@ -1,8 +1,21 @@
+import javax.swing.*;
+import java.awt.Color;
+import java.awt.event.*;
+import java.io.*;
+import javax.swing.JTextArea;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+import java.awt.FlowLayout; 
+import javax.swing.JLabel; 
+import javax.swing.SwingConstants;
+import java.awt.Font;
+
 public class Reaction extends FenetrePrincipale{
     public Solution solA;
     public Solution solB;
     public double Veq;
     public double V0;
+    
 
     public Reaction () {
         solA= new Solution ("Permanganate de Potassium",conce1,true);

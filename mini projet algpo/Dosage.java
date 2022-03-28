@@ -12,7 +12,7 @@ import java.awt.Font;
 
 public class Dosage extends JFrame {
 	
-	public static void main (String[]arg){
+	public static void main (String[]arg) throws IOException{
 		FenetrePrincipale fp = new FenetrePrincipale();
 	}
     
