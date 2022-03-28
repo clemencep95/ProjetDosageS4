@@ -123,6 +123,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.add(scientifique);
 		
 		this.add(Conteneur);
+		Conteneur.repaint();
 
 
 
