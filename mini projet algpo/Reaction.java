@@ -5,8 +5,8 @@ public class Reaction extends FenetrePrincipale{
     public double V0;
 
     public Reaction () {
-        solA= new Solution ("Hydroxyde de sodium",conce1,true);
-        solB= new Solution ("Acide Chlorhydrique",conce2,false);
+        solA= new Solution (soltitrante.getText(),conce1,true);
+        solB= new Solution (soltitree.getText(),conce2,false);
         V0=calculV0(solA,solB);
         Veq=volumeEquivalence(solA,solB);
     }
