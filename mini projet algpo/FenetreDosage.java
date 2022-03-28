@@ -41,7 +41,7 @@ public class FenetreDosage extends JFrame {
 		this.add(titrage);
 
 		Toolkit T=Toolkit.getDefaultToolkit();
-		reaction = T.getImage("equation_reaction.png"); // 
+		reaction = T.getImage("equation_reaction_final.png"); // 
 
 
 
