@@ -90,8 +90,8 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		soltitree.setForeground(Color.white);
 		Conteneur.add(soltitree);
 		
-		conc1 = new JLabel("Sel de Mohr");
-		conc1.setBounds(500,340,940,40);
+		conc1 = new JLabel("Concentration de la solution titrante");
+		conc1.setBounds(600,340,940,40);
 		conc1.setForeground(Color.blue);
 		Conteneur.add(conc1);
 		
