@@ -108,7 +108,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.add(text2);
 		
 		conc2 = new JLabel("Concentration de la solution titree :");
-		conc2.setBounds(500,540,940,40);
+		conc2.setBounds(600,540,940,40);
 		conc2.setForeground(Color.blue);
 		Conteneur.add(conc2);
 		
