@@ -144,9 +144,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				Reaction R1 = new Reaction();
-				System.out.println("V0 = "+ R1.V0);
-				System.out.println("Veq = "+ R1.Veq);
+				//Reaction R1 = new Reaction();
+				//System.out.println("V0 = "+ R1.V0);
+				//System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
 			} else {
 				JLabel erreur = new JLabel("erreur");
