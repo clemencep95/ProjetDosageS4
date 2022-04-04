@@ -31,10 +31,10 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JLabel conc2;
 	public JLabel conc1;
 	public JButton demarrer;
-	int type1 = 0 ;
-	int type2 = 0 ;
-	double conce1 ;
-	double conce2 ;
+	public int type1 = 0 ;
+	public int type2 = 0 ;
+	public double conce1 ;
+	public double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
     public JLabel imageLabel = new JLabel();
@@ -49,25 +49,21 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
-
-		conce1 = 0.0;
-		conce2 = 0.0;
         
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
        	Conteneur.setBackground(new Color(51,153,255));
-        
 		
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(new Color(51,153,255));
 		textArea.setForeground(Color.white);
-		textArea.setBounds(500,100,600,200);
+		textArea.setBounds(500,100,900,200);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
 		Conteneur.add(textArea);
-		textArea.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		textArea.setFont(new Font("Bradley Hand ITC", Font.BOLD, 30));
 		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 
 		soltitrante = new JLabel("Choix de la solution titrante");
@@ -119,7 +115,28 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.setBounds(1200,500,150,40);
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
+<<<<<<< HEAD
+		
+		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
+		scientifique = new JLabel(skinScientifique);
+		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
+		Conteneur.add(scientifique);
 
+		conce1=0;
+		conce2=0;
+		
+=======
+
+
+		JLabel M = new JLabel(new ImageIcon("images/potion1.gif"));
+		M.setBounds(1000,200,800,500);
+		Conteneur.add(M);
+
+		JLabel N = new JLabel(new ImageIcon("images/labo11.png"));
+		N.setBounds(0,320,800,700);
+		Conteneur.add(N);
+
+>>>>>>> 84fbba8532b95a1e3e5290ca3c93f567ad1b9576
 		this.add(Conteneur);
 		Conteneur.repaint();
 	}
@@ -139,7 +156,11 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
+<<<<<<< HEAD
 				R1 = new Reaction();
+=======
+				Reaction R1 = new Reaction();
+>>>>>>> 095b13b3536673de1885163a2d7e65b2ca7d8032
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
@@ -155,11 +176,18 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		}
 	}
 
+<<<<<<< HEAD
     public void test (double[] pH){
         for(int i=0; i<26; i++){
             System.out.println(R1.calculpH(R1.solA ,R1.solB)[i]);
         }
     }}
+=======
+	public double getConce1 () {
+		return conce1;
+	}
+}
+>>>>>>> 095b13b3536673de1885163a2d7e65b2ca7d8032
 	
 
 
