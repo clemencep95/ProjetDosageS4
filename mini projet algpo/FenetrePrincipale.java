@@ -21,8 +21,7 @@ import javax.swing.ImageIcon;
 
 
 public class FenetrePrincipale extends JFrame implements ActionListener {
-	
-	public JFrame FenetrePrincipale1;
+
 	public JPanel Conteneur;
 	public JTextArea textArea;
 	public JButton sol1;
@@ -54,17 +53,16 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
        	Conteneur.setBackground(new Color(51,153,255));
-        
 		
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(new Color(51,153,255));
 		textArea.setForeground(Color.white);
-		textArea.setBounds(500,100,600,200);
+		textArea.setBounds(500,100,900,200);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
 		Conteneur.add(textArea);
-		textArea.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		textArea.setFont(new Font("Bradley Hand ITC", Font.BOLD, 30));
 		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 
 		soltitrante = new JLabel("Choix de la solution titrante");
@@ -116,6 +114,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.setBounds(1200,500,150,40);
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
+<<<<<<< HEAD
 		
 		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
 		scientifique = new JLabel(skinScientifique);
@@ -125,6 +124,18 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		conce1=0;
 		conce2=0;
 		
+=======
+
+
+		JLabel M = new JLabel(new ImageIcon("images/potion1.gif"));
+		M.setBounds(1000,200,800,500);
+		Conteneur.add(M);
+
+		JLabel N = new JLabel(new ImageIcon("images/labo11.png"));
+		N.setBounds(0,320,800,700);
+		Conteneur.add(N);
+
+>>>>>>> 84fbba8532b95a1e3e5290ca3c93f567ad1b9576
 		this.add(Conteneur);
 		Conteneur.repaint();
 	}
