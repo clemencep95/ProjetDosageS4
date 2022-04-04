@@ -119,9 +119,14 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
 
-		JLabel E = new JLabel(new ImageIcon("images/scientifique1.gif"));
-		E.setBounds(50,50,500,500);
-		Conteneur.add(E);
+
+		JLabel M = new JLabel(new ImageIcon("images/potion1.gif"));
+		M.setBounds(1000,200,800,500);
+		Conteneur.add(M);
+
+		JLabel N = new JLabel(new ImageIcon("images/labo11.png"));
+		N.setBounds(0,320,800,700);
+		Conteneur.add(N);
 
 		this.add(Conteneur);
 		Conteneur.repaint();
