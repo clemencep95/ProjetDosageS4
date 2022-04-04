@@ -15,9 +15,9 @@ public class Dosage extends JFrame {
 	public static void main (String[]arg) throws IOException{
 		FenetrePrincipale fp = new FenetrePrincipale();
 
-		for(int i=0; i<26; i++){
+		/*for(int i=0; i<26; i++){
 			System.out.println(Reaction.calculpH[i]
-		}
+		}*/
 		
 	}
     
