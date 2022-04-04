@@ -36,11 +36,11 @@ public class FenetreDosage extends JFrame {
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
-       	Conteneur.setBackground(new Color(51,153,255));
+       	Conteneur.setBackground(Color.WHITE);
 		
 
 		JLabel E = new JLabel(new ImageIcon("images/equation_reaction.jpg"));
-		E.setBounds(50,50,1500,100);
+		E.setBounds(10,30,1500,100);
 		Conteneur.add(E);
 
 		this.add(Conteneur);

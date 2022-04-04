@@ -18,10 +18,7 @@ public class Dosage extends JFrame {
 
 		/*for(int i=0; i<26; i++){
 			System.out.println(Reaction.calculpH[i]);
-<<<<<<< HEAD
-=======
 			System.out.println(Reaction.calculpH(i));
->>>>>>> d7fbaa56d7baccdffda1a4aeb45703c10609e774
 		}*/
 		
 	}
