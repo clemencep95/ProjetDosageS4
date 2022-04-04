@@ -17,7 +17,6 @@ import java.awt.geom.*;
 
 public class FenetreDosage extends JFrame {
 	
-	public JFrame FenetrePrincipale1;
 	public JPanel Conteneur;
 	public JLabel conc2;
 	public JLabel conc1;
@@ -32,32 +31,22 @@ public class FenetreDosage extends JFrame {
 		this.setTitle("Dosage");
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-		Conteneur = new JPanel();
-
-		ImageIcon skinTitrage = new ImageIcon("equation_reaction.jpg");
-		titrage = new JLabel(skinTitrage);
-		titrage.setBounds(100,100,skinTitrage.getIconWidth(),skinTitrage.getIconHeight());
-		this.add(titrage);
-
-		Toolkit T=Toolkit.getDefaultToolkit();
-		reaction = T.getImage("equation_reaction.png"); // 
-
-
-
         this.setVisible(true);
+        
+        Conteneur = new JPanel();
+		Conteneur.setLayout(null);
+		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
+       	Conteneur.setBackground(new Color(51,153,255));
+		
+
+		JLabel E = new JLabel(new ImageIcon("images/equation_reaction.jpg"));
+		E.setBounds(50,50,1500,100);
+		Conteneur.add(E);
+
+		this.add(Conteneur);
+
+
 		
 	}
 
-	public void paint (Graphics g){
-
-		BufferedImage imagePreparation = new BufferedImage(600,500,BufferedImage.TYPE_INT_RGB);
-		// on cree le stylo pour dessiner sur cette image
-		Graphics imagePreparationGraphics = imagePreparation.getGraphics();
-
-		imagePreparationGraphics.drawImage(reaction, 0, 0, this);
-
-		g.drawImage(imagePreparation,0,0,this);
-
-	}
 }

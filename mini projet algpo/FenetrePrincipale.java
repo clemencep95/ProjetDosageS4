@@ -21,8 +21,7 @@ import javax.swing.ImageIcon;
 
 
 public class FenetrePrincipale extends JFrame implements ActionListener {
-	
-	public JFrame FenetrePrincipale1;
+
 	public JPanel Conteneur;
 	public JTextArea textArea;
 	public JButton sol1;
@@ -33,9 +32,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JLabel conc1;
 	public JButton demarrer;
 	int type1 = 0 ;
-	int type2 = 0;
-	double conce1 = 0;
-	double conce2 = 0;
+	int type2 = 0 ;
+	double conce1 ;
+	double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
     public JLabel imageLabel = new JLabel();
@@ -49,6 +48,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
+
+		conce1 = 0.0;
+		conce2 = 0.0;
         
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
@@ -116,22 +118,12 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.setBounds(1200,500,150,40);
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
-		
-		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
-		scientifique = new JLabel(skinScientifique);
-		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
-		Conteneur.add(scientifique);
-		
+
 		this.add(Conteneur);
 		Conteneur.repaint();
-
-
-
 	}
 
 	public void actionPerformed(ActionEvent e){
-		
-		
 		if (e.getSource()==sol1){
 			type1=1;
 			System.out.println(type1);
@@ -146,9 +138,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				Reaction R1 = new Reaction();
-				System.out.println("V0 = "+ R1.V0);
-				System.out.println("Veq = "+ R1.Veq);
+				//Reaction R1 = new Reaction();
+				//System.out.println("V0 = "+ R1.V0);
+				//System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
 			} else {
 				JLabel erreur = new JLabel("erreur");
@@ -159,11 +151,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			}
 			 Conteneur.repaint();
 		}
-		
-
 	}
-	
-
 }
 	
 
