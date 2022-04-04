@@ -6,19 +6,11 @@ public class Reaction extends FenetrePrincipale{
 
     public Reaction () {
         super();
-<<<<<<< HEAD
-        System.out.println(conce2);
-        solA = new Solution (soltitrante.getText(),2,true);
-        System.out.println(solA.concentration);
-        solB = new Solution (soltitree.getText(),3,false);
-        System.out.println(solB.concentration);
-=======
         System.out.println("R1 " + getConce1());
         solA = new Solution (soltitrante.getText(),0.15,true);
         System.out.println("R " + solA.concentration);
         solB = new Solution (soltitree.getText(),0.05,false);
         System.out.println("R " + solB.concentration);
->>>>>>> 095b13b3536673de1885163a2d7e65b2ca7d8032
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
     }
