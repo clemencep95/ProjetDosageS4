@@ -41,6 +41,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     public JLabel headerLabel = new JLabel();
 	public JLabel soltitrante;
 	public JLabel soltitree;
+	public Reaction R1;
     
 	public FenetrePrincipale() {
 		
@@ -138,10 +139,11 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				//Reaction R1 = new Reaction();
-				//System.out.println("V0 = "+ R1.V0);
-				//System.out.println("Veq = "+ R1.Veq);
+				R1 = new Reaction();
+				System.out.println("V0 = "+ R1.V0);
+				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
+				test(R1.calculpH(R1.solA, R1.solB));
 			} else {
 				JLabel erreur = new JLabel("erreur");
 				erreur.setBounds(500,500,1000,100);
@@ -152,7 +154,12 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			 Conteneur.repaint();
 		}
 	}
-}
+
+    public void test (double[] pH){
+        for(int i=0; i<26; i++){
+            System.out.println(R1.calculpH(R1.solA ,R1.solB)[i]);
+        }
+    }}
 	
 
 
