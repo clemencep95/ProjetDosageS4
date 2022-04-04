@@ -1,4 +1,4 @@
-/*public class Reaction extends FenetrePrincipale{
+public class Reaction extends FenetrePrincipale{
     public Solution solA;
     public Solution solB;
     public double Veq;
@@ -49,4 +49,3 @@
 
     
 }
-*/
