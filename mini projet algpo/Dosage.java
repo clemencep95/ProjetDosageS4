@@ -16,6 +16,7 @@ public class Dosage extends JFrame {
 		FenetrePrincipale fp = new FenetrePrincipale();
 
 		/*for(int i=0; i<26; i++){
+			System.out.println(Reaction.calculpH[i]);
 			System.out.println(Reaction.calculpH(i));
 		}*/
 		

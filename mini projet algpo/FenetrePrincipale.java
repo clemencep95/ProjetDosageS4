@@ -1,23 +1,23 @@
 import javax.swing.*;
-// import java.awt.Color;
+import java.awt.Color;
 import java.awt.event.*;
 import java.io.*;
-// import javax.swing.JTextArea;
-// import java.awt.Toolkit;
-// import javax.swing.JFrame;
-// import java.awt.FlowLayout; 
-// import javax.swing.JLabel; 
-// import javax.swing.SwingConstants;
-// import java.awt.Font;
+import javax.swing.JTextArea;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+import java.awt.FlowLayout; 
+import javax.swing.JLabel; 
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 import java.awt.*;
-// import java.awt.geom.*;
-// import java.awt.image.*;
-import javax.imageio.*;
-// import javax.swing.JPanel;
-// import java.awt.BorderLayout;
+import java.awt.geom.*;
+import java.awt.image.*;
 
-// import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+
+import javax.swing.ImageIcon;
 
 
 public class FenetrePrincipale extends JFrame implements ActionListener {
@@ -33,23 +33,25 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JLabel conc1;
 	public JButton demarrer;
 	int type1 = 0 ;
-	int type2 = 0;
-	double conce1 = 0;
-	double conce2 = 0;
+	int type2 = 0 ;
+	double conce1 ;
+	double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
     public JLabel imageLabel = new JLabel();
     public JLabel headerLabel = new JLabel();
 	public JLabel soltitrante;
 	public JLabel soltitree;
-	private ImageIcon image;
     
-	public FenetrePrincipale() throws IOException {
+	public FenetrePrincipale() {
 		
 		this.setTitle("Dosage");
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
+
+		conce1 = 0.0;
+		conce2 = 0.0;
         
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
@@ -118,28 +120,16 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
 		
-		/*ImageIcon skinScientifique = new ImageIcon("lion_final.png");
+		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
 		scientifique = new JLabel(skinScientifique);
 		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
-		Conteneur.add(scientifique);*/
-		
-	
-		JLabel E = new JLabel(new ImageIcon("images/equation_reaction.jpg"));
-		E.setBounds(250,690,200,200);
-		Conteneur.add(E);
+		Conteneur.add(scientifique);
 		
 		this.add(Conteneur);
 		Conteneur.repaint();
-		Conteneur.setVisible(true);
-		this.setVisible(true);
-
-
-
 	}
 
 	public void actionPerformed(ActionEvent e){
-		
-		
 		if (e.getSource()==sol1){
 			type1=1;
 			System.out.println(type1);
@@ -155,8 +145,8 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
 				//Reaction R1 = new Reaction();
-				System.out.println("V0 = "+ R1.V0);
-				System.out.println("Veq = "+ R1.Veq);
+				//System.out.println("V0 = "+ R1.V0);
+				//System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
 			} else {
 				JLabel erreur = new JLabel("erreur");
@@ -167,31 +157,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			}
 			 Conteneur.repaint();
 		}
-		
-
 	}
-
-	public static String readFile(String chemin) {
-        try{
-            InputStream flux= new FileInputStream(chemin);
-            InputStreamReader lecture= new InputStreamReader(flux,"UTF-8");
-            try (BufferedReader buff = new BufferedReader(lecture)) {
-                String ligne = "";
-                String contenu = "";
-                while ((ligne = buff.readLine()) != null){
-                    contenu += ligne + "\n";
-                }
-                return contenu;
-            } catch (Exception e) {
-                System.out.println(e.toString());
-            }
-       } catch (IOException e){
-            System.out.println(e.toString());
-       }
-       return null;
-    }
-	
-
 }
 	
 
