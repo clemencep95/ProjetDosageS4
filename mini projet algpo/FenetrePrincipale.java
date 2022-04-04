@@ -21,8 +21,7 @@ import javax.swing.ImageIcon;
 
 
 public class FenetrePrincipale extends JFrame implements ActionListener {
-	
-	public JFrame FenetrePrincipale1;
+
 	public JPanel Conteneur;
 	public JTextArea textArea;
 	public JButton sol1;
@@ -119,12 +118,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.setBounds(1200,500,150,40);
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
-		
-		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
-		scientifique = new JLabel(skinScientifique);
-		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
-		Conteneur.add(scientifique);
-		
+
 		this.add(Conteneur);
 		Conteneur.repaint();
 	}
