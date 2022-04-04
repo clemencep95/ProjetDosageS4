@@ -1,23 +1,23 @@
 import javax.swing.*;
-import java.awt.Color;
+// import java.awt.Color;
 import java.awt.event.*;
 import java.io.*;
-import javax.swing.JTextArea;
-import java.awt.Toolkit;
-import javax.swing.JFrame;
-import java.awt.FlowLayout; 
-import javax.swing.JLabel; 
-import javax.swing.SwingConstants;
-import java.awt.Font;
+// import javax.swing.JTextArea;
+// import java.awt.Toolkit;
+// import javax.swing.JFrame;
+// import java.awt.FlowLayout; 
+// import javax.swing.JLabel; 
+// import javax.swing.SwingConstants;
+// import java.awt.Font;
 
 import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
+// import java.awt.geom.*;
+// import java.awt.image.*;
+import javax.imageio.*;
+// import javax.swing.JPanel;
+// import java.awt.BorderLayout;
 
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-
-import javax.swing.ImageIcon;
+// import javax.swing.ImageIcon;
 
 
 public class FenetrePrincipale extends JFrame implements ActionListener {
@@ -42,8 +42,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
     public JLabel headerLabel = new JLabel();
 	public JLabel soltitrante;
 	public JLabel soltitree;
+	private ImageIcon image;
     
-	public FenetrePrincipale() {
+	public FenetrePrincipale() throws IOException {
 		
 		this.setTitle("Dosage");
 		this.setLayout(null);
@@ -117,13 +118,20 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
 		
-		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
+		/*ImageIcon skinScientifique = new ImageIcon("lion_final.png");
 		scientifique = new JLabel(skinScientifique);
 		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
-		Conteneur.add(scientifique);
+		Conteneur.add(scientifique);*/
+		
+	
+		JLabel E = new JLabel(new ImageIcon("images/equation_reaction.jpg"));
+		E.setBounds(250,690,200,200);
+		Conteneur.add(E);
 		
 		this.add(Conteneur);
 		Conteneur.repaint();
+		Conteneur.setVisible(true);
+		this.setVisible(true);
 
 
 
@@ -146,7 +154,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				Reaction R1 = new Reaction();
+				//Reaction R1 = new Reaction();
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
@@ -162,6 +170,26 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		
 
 	}
+
+	public static String readFile(String chemin) {
+        try{
+            InputStream flux= new FileInputStream(chemin);
+            InputStreamReader lecture= new InputStreamReader(flux,"UTF-8");
+            try (BufferedReader buff = new BufferedReader(lecture)) {
+                String ligne = "";
+                String contenu = "";
+                while ((ligne = buff.readLine()) != null){
+                    contenu += ligne + "\n";
+                }
+                return contenu;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+       } catch (IOException e){
+            System.out.println(e.toString());
+       }
+       return null;
+    }
 	
 
 }

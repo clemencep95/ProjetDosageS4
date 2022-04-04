@@ -41,7 +41,12 @@ public class FenetreDosage extends JFrame {
 		this.add(titrage);
 
 		Toolkit T=Toolkit.getDefaultToolkit();
-		reaction = T.getImage("little-girl.svg"); // 
+		reaction = T.getImage("lion_final.png"); // 
+
+
+		JLabel E = new JLabel(new ImageIcon("images/equation_reaction.jpg"));
+		E.setBounds(250,690,200,200);
+		Conteneur.add(E);
 
 
 
@@ -52,7 +57,7 @@ public class FenetreDosage extends JFrame {
 	public void paint (Graphics g){
 
 		BufferedImage imagePreparation = new BufferedImage(600,500,BufferedImage.TYPE_INT_RGB);
-		// on cree le stylo pour dessiner sur cette image
+
 		Graphics imagePreparationGraphics = imagePreparation.getGraphics();
 
 		imagePreparationGraphics.drawImage(reaction, 0, 0, this);
