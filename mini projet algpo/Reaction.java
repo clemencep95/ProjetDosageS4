@@ -1,4 +1,4 @@
-/*public class Reaction extends FenetrePrincipale{
+public class Reaction extends FenetrePrincipale{
     public Solution solA;
     public Solution solB;
     public double Veq;
@@ -13,10 +13,6 @@
         System.out.println(solB.concentration);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
-        solA= new Solution ("Hydroxyde de sodium",conce1,true);
-        solB= new Solution ("Acide Chlorhydrique",conce2,false);
-        V0=calculV0(solA,solB);
-        Veq=volumeEquivalence(solA,solB);
     }
 
     public double volumeEquivalence (Solution A, Solution B){
@@ -49,4 +45,3 @@
 
     
 }
-*/
