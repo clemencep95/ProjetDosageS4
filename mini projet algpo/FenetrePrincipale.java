@@ -56,17 +56,16 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
        	Conteneur.setBackground(new Color(51,153,255));
-        
 		
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(new Color(51,153,255));
 		textArea.setForeground(Color.white);
-		textArea.setBounds(500,100,600,200);
+		textArea.setBounds(500,100,900,200);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
 		Conteneur.add(textArea);
-		textArea.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		textArea.setFont(new Font("Bradley Hand ITC", Font.BOLD, 30));
 		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 
 		soltitrante = new JLabel("Choix de la solution titrante");
