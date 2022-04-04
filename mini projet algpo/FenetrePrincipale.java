@@ -114,17 +114,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.setBounds(1200,500,150,40);
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
-<<<<<<< HEAD
-		
-		ImageIcon skinScientifique = new ImageIcon("scientifique.gif");
-		scientifique = new JLabel(skinScientifique);
-		scientifique.setBounds(100,100,skinScientifique.getIconWidth(),skinScientifique.getIconHeight());
-		Conteneur.add(scientifique);
-
-		conce1=0;
-		conce2=0;
-		
-=======
 
 
 		JLabel M = new JLabel(new ImageIcon("images/potion1.gif"));
@@ -135,7 +124,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		N.setBounds(0,320,800,700);
 		Conteneur.add(N);
 
->>>>>>> 84fbba8532b95a1e3e5290ca3c93f567ad1b9576
 		this.add(Conteneur);
 		Conteneur.repaint();
 	}
