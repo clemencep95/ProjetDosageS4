@@ -33,4 +33,3 @@ public class Dosage extends JFrame {
     
 
 }
->>>>>>> 84fbba8532b95a1e3e5290ca3c93f567ad1b9576
