@@ -119,7 +119,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
 
-		JLabel E = new JLabel(new ImageIcon("images/scientifique.gif"));
+		JLabel E = new JLabel(new ImageIcon("images/scientifique1.gif"));
 		E.setBounds(50,50,500,500);
 		Conteneur.add(E);
 
