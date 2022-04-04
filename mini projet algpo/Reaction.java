@@ -6,11 +6,11 @@ public class Reaction extends FenetrePrincipale{
 
     public Reaction () {
         super();
-        System.out.println(conce2);
-        solA = new Solution (soltitrante.getText(),conce1,true);
-        System.out.println(solA.concentration);
-        solB = new Solution (soltitree.getText(),conce2,false);
-        System.out.println(solB.concentration);
+        System.out.println("R1 " + getConce1());
+        solA = new Solution (soltitrante.getText(),0.15,true);
+        System.out.println("R " + solA.concentration);
+        solB = new Solution (soltitree.getText(),0.05,false);
+        System.out.println("R " + solB.concentration);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
     }
@@ -35,13 +35,19 @@ public class Reaction extends FenetrePrincipale{
         }
         return (V0+Math.random()*0.002-Math.random()*0.002);
     }
+
     public double [] calculpH (Solution A, Solution B){
-        double [] pH = new double [] {25};
-        for (int i=0; i<26; i++){
-                pH[i]= -Math.log10((A.concentration*this.V0)-(B.concentration*i)*(this.V0*i));
+        double [] pH = new double [26];
+        for (int i=1; i<=((int)Veq); i++){
+            pH[i]= -Math.log10(((A.concentration*this.V0)-(B.concentration*i))/(this.V0+i));
+        }
+        for (int i=((int)Veq+1); i<26; i++){
+            pH[i]= -Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)));
         }
         return pH;
     }
+
+
 
     
 }

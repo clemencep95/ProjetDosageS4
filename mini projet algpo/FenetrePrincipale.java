@@ -9,7 +9,6 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel; 
 import javax.swing.SwingConstants;
 import java.awt.Font;
-
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.image.*;
@@ -31,16 +30,17 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public JLabel conc2;
 	public JLabel conc1;
 	public JButton demarrer;
-	int type1 = 0 ;
-	int type2 = 0 ;
-	double conce1 ;
-	double conce2 ;
+	public int type1 = 0 ;
+	public int type2 = 0 ;
+	public double conce1 ;
+	public double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
     public JLabel imageLabel = new JLabel();
     public JLabel headerLabel = new JLabel();
 	public JLabel soltitrante;
 	public JLabel soltitree;
+	public Reaction R1;
     
 	public FenetrePrincipale() {
 		
@@ -48,29 +48,25 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible(true);
-
-		conce1 = 0.0;
-		conce2 = 0.0;
         
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
        	Conteneur.setBackground(new Color(51,153,255));
-        
 		
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(new Color(51,153,255));
 		textArea.setForeground(Color.white);
-		textArea.setBounds(500,100,600,200);
+		textArea.setBounds(500,100,900,200);
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
 		Conteneur.add(textArea);
-		textArea.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		textArea.setFont(new Font("Bradley Hand ITC", Font.BOLD, 30));
 		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 
 		soltitrante = new JLabel("Choix de la solution titrante");
-		soltitrante.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		soltitrante.setFont(new Font("Bradley Hand ITC", Font.BOLD, 20));
 		soltitrante.setBounds(20,400,940,40);
 		soltitrante.setForeground(Color.white);
 		Conteneur.add(soltitrante);
@@ -87,7 +83,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.add(text1);
 
 		soltitree = new JLabel("Choix de la solution titree");
-		soltitree.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		soltitree.setFont(new Font("Bradley Hand ITC", Font.BOLD, 20));
 		soltitree.setBounds(20,600,940,40);
 		soltitree.setForeground(Color.white);
 		Conteneur.add(soltitree);
@@ -128,6 +124,10 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		N.setBounds(0,320,800,700);
 		Conteneur.add(N);
 
+		JLabel L = new JLabel(new ImageIcon("images/laboratoire.JPEG"));
+		L.setBounds(1000,400,800,696);
+		Conteneur.add(L);
+
 		this.add(Conteneur);
 		Conteneur.repaint();
 	}
@@ -147,10 +147,11 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				//Reaction R1 = new Reaction();
-				//System.out.println("V0 = "+ R1.V0);
-				//System.out.println("Veq = "+ R1.Veq);
+				R1 = new Reaction();
+				System.out.println("V0 = "+ R1.V0);
+				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
+				test(R1.calculpH(R1.solA, R1.solB));
 			} else {
 				JLabel erreur = new JLabel("erreur");
 				erreur.setBounds(500,500,1000,100);
@@ -161,7 +162,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			 Conteneur.repaint();
 		}
 	}
-}
 	
 
 
