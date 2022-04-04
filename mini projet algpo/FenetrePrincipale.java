@@ -9,7 +9,6 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel; 
 import javax.swing.SwingConstants;
 import java.awt.Font;
-
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.image.*;
@@ -69,7 +68,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		textArea.setAlignmentX(JTextArea.CENTER_ALIGNMENT);
 
 		soltitrante = new JLabel("Choix de la solution titrante");
-		soltitrante.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		soltitrante.setFont(new Font("Bradley Hand ITC", Font.BOLD, 20));
 		soltitrante.setBounds(20,400,940,40);
 		soltitrante.setForeground(Color.white);
 		Conteneur.add(soltitrante);
@@ -86,7 +85,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		Conteneur.add(text1);
 
 		soltitree = new JLabel("Choix de la solution titree");
-		soltitree.setFont(new Font("Liberation Serif", Font.BOLD, 20));
+		soltitree.setFont(new Font("Bradley Hand ITC", Font.BOLD, 20));
 		soltitree.setBounds(20,600,940,40);
 		soltitree.setForeground(Color.white);
 		Conteneur.add(soltitree);
@@ -126,6 +125,10 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		JLabel N = new JLabel(new ImageIcon("images/labo11.png"));
 		N.setBounds(0,320,800,700);
 		Conteneur.add(N);
+
+		JLabel L = new JLabel(new ImageIcon("images/laboratoire.JPEG"));
+		L.setBounds(1000,400,800,696);
+		Conteneur.add(L);
 
 		this.add(Conteneur);
 		Conteneur.repaint();
