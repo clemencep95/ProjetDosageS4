@@ -16,18 +16,7 @@ import java.awt.geom.*;
 
 import java.awt.Color; 
 import java.awt.BasicStroke; 
-
-/*import org.jfree.chart.ChartPanel; 
-import org.jfree.chart.JFreeChart; 
-import org.jfree.data.xy.XYDataset; 
-import org.jfree.data.xy.XYSeries; 
-import org.jfree.ui.ApplicationFrame; 
-import org.jfree.ui.RefineryUtilities; 
-import org.jfree.chart.plot.XYPlot; 
-import org.jfree.chart.ChartFactory; 
-import org.jfree.chart.plot.PlotOrientation; 
-import org.jfree.data.xy.XYSeriesCollection; 
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;*/
+import java.awt.*;
 
 
 public class FenetreDosage extends JFrame {
@@ -59,9 +48,24 @@ public class FenetreDosage extends JFrame {
 		Conteneur.add(E);
 
 		this.add(Conteneur);
-
-
-		
 	}
+
+		public void paint (Graphics g){
+
+			Graphics2D g2 = (Graphics2D) g;
+
+				
+	 
+			int nombreDePoints = 25;
+			for (int i = 0; i <= nombreDePoints-1; i++) {
+				double x1 = Reaction.tab[i].get(x);
+				double y1 = Reaction.tab[i+1].get(y);
+				double x2 = Reaction.tab[i+1].get(x);
+				double y2 = Reaction.tab[i+1].get(y);
+				
+				g2.draw(new Line2D.Double(x1, y1, x2, y2));
+			}
+		}
+	
 
 }
