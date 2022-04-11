@@ -15,7 +15,7 @@ import java.awt.image.*;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.swing.UIManager;
+import javax.swing.UIManager;
 
 import javax.swing.ImageIcon;
 
@@ -156,7 +156,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				R1 = new Reaction();
+				R1 = new Reaction(this);
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();

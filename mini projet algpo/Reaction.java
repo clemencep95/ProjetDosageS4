@@ -3,12 +3,15 @@ public class Reaction extends FenetrePrincipale{
     public Solution solB;
     public double Veq;
     public double V0;
+    FenetrePrincipale fenetreParente;
 
-    public Reaction () {
+    public Reaction (FenetrePrincipale laFenetreParente) {
         super();
-        solA = new Solution (soltitrante.getText(),0.15,true);
+        fenetreParente = laFenetreParente;
+        System.out.println("R1" + fenetreParente.conce1);
+        solA = new Solution (fenetreParente.soltitrante.getText(),fenetreParente.conce1,true);
         System.out.println("R " + solA.concentration);
-        solB = new Solution (soltitree.getText(),0.05,false);
+        solB = new Solution (fenetreParente.soltitree.getText(),fenetreParente.conce2,false);
         System.out.println("R " + solB.concentration);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
