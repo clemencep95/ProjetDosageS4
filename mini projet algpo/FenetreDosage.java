@@ -16,18 +16,7 @@ import java.awt.geom.*;
 
 import java.awt.Color; 
 import java.awt.BasicStroke; 
-
-/*import org.jfree.chart.ChartPanel; 
-import org.jfree.chart.JFreeChart; 
-import org.jfree.data.xy.XYDataset; 
-import org.jfree.data.xy.XYSeries; 
-import org.jfree.ui.ApplicationFrame; 
-import org.jfree.ui.RefineryUtilities; 
-import org.jfree.chart.plot.XYPlot; 
-import org.jfree.chart.ChartFactory; 
-import org.jfree.chart.plot.PlotOrientation; 
-import org.jfree.data.xy.XYSeriesCollection; 
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;*/
+import java.awt.geom;
 
 
 public class FenetreDosage extends JFrame {
@@ -60,8 +49,36 @@ public class FenetreDosage extends JFrame {
 
 		this.add(Conteneur);
 
+		public void paint (Graphics g){
 
-		
+			Graphics2D g2 = (Graphics2D) g;
+
+			g2.setColor(Color.pink);
+        	g2.fillRect(0, 0, 1000, 1000);
+
+			Point2D.Double [] t = new Point2D.Double [25];
+			for (int i = 0 ; i<= 25 ; i++){
+				t[i]= new Point2D.Double(i,i);
+			}
+			for (int i = 0; i <= 24; i++) {
+				
+				g2.draw(new Line2D.Double(t[i],t[i+1]));
+			}
+				
+	 
+			int nombreDePoints = 25;
+			for (int i = 0; i <= nombreDePoints-1; i++) {
+				/*double x1 = Reaction.tab[i].get(x);
+				double y1 = Reaction.tab[i+1].get(y);
+				double x2 = Reaction.tab[i+1].get(x);
+				double y2 = Reaction.tab[i+1].get(y);
+				
+				g2.draw(new Line2D.Double(x1, y1, x2, y2));*/
+			}
+		}
+	
+
+
 	}
 
 }
