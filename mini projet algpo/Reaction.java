@@ -8,11 +8,8 @@ public class Reaction extends FenetrePrincipale{
     public Reaction (FenetrePrincipale laFenetreParente) {
         super();
         fenetreParente = laFenetreParente;
-        System.out.println("R1" + fenetreParente.conce1);
         solA = new Solution (fenetreParente.soltitrante.getText(),fenetreParente.conce1,true);
-        System.out.println("R " + solA.concentration);
         solB = new Solution (fenetreParente.soltitree.getText(),fenetreParente.conce2,false);
-        System.out.println("R " + solB.concentration);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
     }
