@@ -4,16 +4,21 @@ public class Reaction extends FenetrePrincipale{
     public double Veq;
     public double V0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Apoint [] points = new Apoint [26];
 =======
     FenetrePrincipale fenetreParente;
 >>>>>>> 16571ceea279ae59c92eadfd59120a92052eb1d9
+=======
+>>>>>>> aced66e600f4f605a243fd1c8294abd58a494c7f
 
-    public Reaction (FenetrePrincipale laFenetreParente) {
+    public Reaction () {
         super();
-        fenetreParente = laFenetreParente;
-        solA = new Solution (fenetreParente.soltitrante.getText(),fenetreParente.conce1,true);
-        solB = new Solution (fenetreParente.soltitree.getText(),fenetreParente.conce2,false);
+        System.out.println("R1 " + getConce1());
+        solA = new Solution (soltitrante.getText(),0.15,true);
+        System.out.println("R " + solA.concentration);
+        solB = new Solution (soltitree.getText(),0.05,false);
+        System.out.println("R " + solB.concentration);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
         calculpH(solA, solB);
@@ -31,10 +36,10 @@ public class Reaction extends FenetrePrincipale{
 
     public double calculV0 ( Solution A, Solution B){
         if (A.titrante==true) {
-            V0 = B.concentration * 0.024 / (A.concentration);
+            V0 = B.concentration * 0.0225 / (A.concentration);
             System.out.println(V0);
         }else{
-            V0 = A.concentration * 0.024 / (B.concentration);
+            V0 = A.concentration * 0.0225 / (B.concentration);
             System.out.println(V0);
         }
         return (V0+Math.random()*0.002-Math.random()*0.002);
@@ -49,7 +54,12 @@ public class Reaction extends FenetrePrincipale{
             tab[i]= APoint(i,(-Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)))));
         }
     }
+<<<<<<< HEAD
  
+=======
+
+    
+>>>>>>> aced66e600f4f605a243fd1c8294abd58a494c7f
 
 
     
