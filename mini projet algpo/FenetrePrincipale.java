@@ -15,6 +15,7 @@ import java.awt.image.*;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import javax.swing.UIManager;
 
 import javax.swing.ImageIcon;
 
@@ -43,6 +44,14 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public Reaction R1;
     
 	public FenetrePrincipale() {
+		
+		try{
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        }catch(Exception e){
+            e.printStackTrace(); 
+        }
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setTitle("Dosage");
 		this.setLayout(null);
@@ -135,22 +144,22 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e){
 		if (e.getSource()==sol1){
 			type1=1;
-			System.out.println(type1);
 		}else if (e.getSource()==sol2){
 			type2=2;
-			System.out.println(type2);
 		} else if (e.getSource()==text1){
 			conce1 = Double.parseDouble(text1.getText());
-			System.out.println(conce1);
 		} else if (e.getSource()==text2){
 			conce2 = Double.parseDouble(text2.getText());
-			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				R1 = new Reaction();
+				R1 = new Reaction(this);
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
+<<<<<<< HEAD
+=======
+				//test(R1.calculpH(R1.solA, R1.solB));
+>>>>>>> 16571ceea279ae59c92eadfd59120a92052eb1d9
 			} else {
 				JLabel erreur = new JLabel("erreur");
 				erreur.setBounds(500,500,1000,100);
