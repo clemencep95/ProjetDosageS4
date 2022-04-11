@@ -26,10 +26,10 @@ public class Reaction extends FenetrePrincipale{
 
     public double calculV0 ( Solution A, Solution B){
         if (A.titrante==true) {
-            V0 = B.concentration * 0.024 / (A.concentration);
+            V0 = B.concentration * 0.0225 / (A.concentration);
             System.out.println(V0);
         }else{
-            V0 = A.concentration * 0.024 / (B.concentration);
+            V0 = A.concentration * 0.0225 / (B.concentration);
             System.out.println(V0);
         }
         return (V0+Math.random()*0.002-Math.random()*0.002);

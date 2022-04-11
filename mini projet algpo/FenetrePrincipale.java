@@ -61,7 +61,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
         Conteneur = new JPanel();
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
-       	Conteneur.setBackground(new Color(51,153,255));
+       	Conteneur.setBackground(new Color(153,217,234));
 		
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(new Color(51,153,255));
