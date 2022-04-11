@@ -6,7 +6,6 @@ public class Reaction extends FenetrePrincipale{
 
     public Reaction () {
         super();
-        System.out.println("R1 " + getConce1());
         solA = new Solution (soltitrante.getText(),0.15,true);
         System.out.println("R " + solA.concentration);
         solB = new Solution (soltitree.getText(),0.05,false);

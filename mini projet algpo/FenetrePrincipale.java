@@ -16,6 +16,7 @@ import java.awt.image.*;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.swing.UIManager;
 
 import javax.swing.ImageIcon;
 
@@ -44,6 +45,14 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public Reaction R1;
     
 	public FenetrePrincipale() {
+		
+		try{
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        }catch(Exception e){
+            e.printStackTrace(); 
+        }
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setTitle("Dosage");
 		this.setLayout(null);
@@ -148,7 +157,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
-				test(R1.calculpH(R1.solA, R1.solB));
+				//test(R1.calculpH(R1.solA, R1.solB));
 			} else {
 				JLabel erreur = new JLabel("erreur");
 				erreur.setBounds(500,500,1000,100);
@@ -159,6 +168,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 			 Conteneur.repaint();
 		}
 	}
+}
 	
 
 
