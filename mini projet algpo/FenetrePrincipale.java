@@ -156,10 +156,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
 				FenetreDosage f = new FenetreDosage();
-<<<<<<< HEAD
-=======
 				//test(R1.calculpH(R1.solA, R1.solB));
->>>>>>> 16571ceea279ae59c92eadfd59120a92052eb1d9
 			} else {
 				JLabel erreur = new JLabel("erreur");
 				erreur.setBounds(500,500,1000,100);
