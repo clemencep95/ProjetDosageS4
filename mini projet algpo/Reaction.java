@@ -3,6 +3,7 @@ public class Reaction extends FenetrePrincipale{
     public Solution solB;
     public double Veq;
     public double V0;
+    public Apoint [] points = new Apoint [26];
 
     public Reaction () {
         super();
@@ -13,6 +14,7 @@ public class Reaction extends FenetrePrincipale{
         System.out.println("R " + solB.concentration);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
+        calculpH(solA, solB);
     }
 
     public double volumeEquivalence (Solution A, Solution B){
@@ -36,17 +38,16 @@ public class Reaction extends FenetrePrincipale{
         return (V0+Math.random()*0.002-Math.random()*0.002);
     }
 
-    public double [] calculpH (Solution A, Solution B){
+    public void calculpH (Solution A, Solution B){
         double [] pH = new double [26];
         for (int i=1; i<=((int)Veq); i++){
-            pH[i]= -Math.log10(((A.concentration*this.V0)-(B.concentration*i))/(this.V0+i));
+            tab[i]= APoint(i,(-Math.log10(((A.concentration*this.V0)-(B.concentration*i))/(this.V0+i))));
         }
         for (int i=((int)Veq+1); i<26; i++){
-            pH[i]= -Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)));
+            tab[i]= APoint(i,(-Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)))));
         }
-        return pH;
     }
-
+ 
 
 
     
