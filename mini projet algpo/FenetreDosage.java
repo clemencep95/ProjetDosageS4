@@ -45,7 +45,6 @@ public class FenetreDosage extends JFrame {
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
        	Conteneur.setBackground(Color.WHITE);
 		
-
 		JLabel E = new JLabel(new ImageIcon("images/equation_reaction.jpg"));
 		E.setBounds(10,30,1500,100);
 		Conteneur.add(E);
@@ -58,9 +57,9 @@ public class FenetreDosage extends JFrame {
 			Graphics2D g2 = (Graphics2D) g;
 
 			int nombreDePoints = 25;
-			for (int i = 0; i <= nombreDePoints-2; i++) {
+			for (int i = 1; i <= nombreDePoints-2; i++) {
 				double x1 = fenetreParente.R1.points[i].x;
-				double y1 = fenetreParente.R1.points[i+1].y;
+				double y1 = fenetreParente.R1.points[i].y;
 				double x2 = fenetreParente.R1.points[i+1].x;
 				double y2 = fenetreParente.R1.points[i+1].y;
 				

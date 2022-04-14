@@ -48,12 +48,12 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		this.setTitle("Dosage");
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                       this.setVisible(true);
+    	this.setVisible(true);
         
-                       Conteneur = new JPanel();
+        Conteneur = new JPanel();
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
-            	Conteneur.setBackground(new Color(153,217,234));
+        Conteneur.setBackground(new Color(153,217,234));
 		
 		double h = this.getHeight();
 		System.out.println(h);
@@ -63,7 +63,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
 		textArea.setBackground(Color.black);
 		textArea.setForeground(Color.white);
-		          textArea.setBounds((int)(l*(500.0/1938.0)),(int)(h*(70.0/1038.0)),(int)(l*(900.0/1938.0)),(int)(h*(200.0/1038.0))); //changement des limites pour adaptation à tout écran
+		textArea.setBounds((int)(l*(500.0/1938.0)),(int)(h*(70.0/1038.0)),(int)(l*(900.0/1938.0)),(int)(h*(200.0/1038.0))); //changement des limites pour adaptation à tout écran
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
