@@ -14,7 +14,6 @@ public class Dosage extends JFrame {
 	
 	public static void main (String[]arg) throws IOException{
 		FenetrePrincipale fp = new FenetrePrincipale();
-		FenetreDosage fd = new FenetreDosage();
 
 		/*for(int i=0; i<26; i++){
 <<<<<<< HEAD

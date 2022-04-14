@@ -15,7 +15,6 @@ import java.awt.image.*;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import javax.swing.UIManager;
 
 import javax.swing.ImageIcon;
 
@@ -37,36 +36,34 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
-    public JLabel imageLabel = new JLabel();
-    public JLabel headerLabel = new JLabel();
+            public JLabel imageLabel = new JLabel();
+            public JLabel headerLabel = new JLabel();
 	public JLabel soltitrante;
 	public JLabel soltitree;
 	public Reaction R1;
+	public JLabel L;
     
 	public FenetrePrincipale() {
-		
-		try{
-            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        }catch(Exception e){
-            e.printStackTrace(); 
-        }
-		
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setTitle("Dosage");
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setVisible(true);
+                       this.setVisible(true);
         
-        Conteneur = new JPanel();
+                       Conteneur = new JPanel();
 		Conteneur.setLayout(null);
 		Conteneur.setBounds(0,0,this.getWidth(),this.getHeight());
-       	Conteneur.setBackground(new Color(153,217,234));
+            	Conteneur.setBackground(new Color(153,217,234));
+		
+		double h = this.getHeight();
+		System.out.println(h);
+		double l = this.getWidth();
+		System.out.println(l);
 		
 		textArea = new JTextArea("Bonjour ! Bienvenue dans le logiciel de modelisation de dosage chimique ! Tu peux des a present choisir quel dosage tu veux modeliser en choisissant les solutions et les concentrations ! On s'occupe du reste !");
-		textArea.setBackground(new Color(51,153,255));
+		textArea.setBackground(Color.black);
 		textArea.setForeground(Color.white);
-		textArea.setBounds(500,100,900,200);
+		          textArea.setBounds((int)(l*(500.0/1938.0)),(int)(h*(70.0/1038.0)),(int)(l*(900.0/1938.0)),(int)(h*(200.0/1038.0))); //changement des limites pour adaptation à tout écran
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setVisible(true);
@@ -76,86 +73,95 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 
 		soltitrante = new JLabel("Choix de la solution titrante");
 		soltitrante.setFont(new Font("Bradley Hand ITC", Font.BOLD, 20));
-		soltitrante.setBounds(20,400,940,40);
+		soltitrante.setBounds((int)(l*(200.0/1938.0)),(int)(h*(350.0/1038.0)),(int)(l*(940.0/1938.0)),(int)(h*(40.0/1038.0)));
 		soltitrante.setForeground(Color.white);
 		Conteneur.add(soltitrante);
 			
 		sol1 = new JButton("Hydroxyde de sodium");
-		sol1.setBounds(300,400,250,40);
+		sol1.setBounds((int)(l*(480.0/1938.0)),(int)(h*(350.0/1038.0)),(int)(l*(250.0/1938.0)),(int)(h*(40.0/1038.0)));
 		sol1.addActionListener(this);
 		Conteneur.add(sol1);
 		
 		text1 = new JTextField();
-		text1.setBounds(600,400,150,40);
+		text1.setBounds((int)(l*(780.0/1938.0)),(int)(h*(350.0/1038.0)),(int)(l*(150.0/1938.0)),(int)(h*(40.0/1038.0)));
 		text1.setBackground(Color.white);
 		text1.addActionListener(this);
 		Conteneur.add(text1);
 
 		soltitree = new JLabel("Choix de la solution titree");
 		soltitree.setFont(new Font("Bradley Hand ITC", Font.BOLD, 20));
-		soltitree.setBounds(20,600,940,40);
+		soltitree.setBounds((int)(l*(200.0/1938.0)),(int)(h*(500.0/1038.0)),(int)(l*(940.0/1938.0)),(int)(h*(40.0/1038.0)));
 		soltitree.setForeground(Color.white);
 		Conteneur.add(soltitree);
 		
-		conc1 = new JLabel("Concentration de la solution titrante");
-		conc1.setBounds(600,340,940,40);
-		conc1.setForeground(Color.blue);
+		conc1 = new JLabel("Concentration de la solution titrante :");
+		conc1.setFont(new Font ("Bradley Hand ITC", Font.BOLD, 20));
+		conc1.setBounds((int)(l*(760.0/1938.0)),(int)(h*(290.0/1038.0)),(int)(l*(940.0/1938.0)),(int)(h*(40.0/1038.0)));
+		conc1.setForeground(Color.white);
 		Conteneur.add(conc1);
 		
 	
 		sol2 = new JButton("Acide Chlorhydrique");
-		sol2 .setBounds(350,600,150,40);
+		sol2 .setBounds((int)(l*(530.0/1938.0)),(int)(h*(500.0/1038.0)),(int)(l*(150.0/1938.0)),(int)(h*(40.0/1038.0)));
 		sol2.addActionListener(this);
 		Conteneur.add(sol2);
 		
 		text2 = new JTextField();
-		text2.setBounds(600,600,150,40);
+		text2.setBounds((int)(l*(780.0/1938.0)),(int)(h*(500.0/1038.0)),(int)(l*(180.0/1938.0)),(int)(h*(40.0/1038.0)));
 		text2.setBackground(Color.white);
 		text2.addActionListener(this);
 		Conteneur.add(text2);
 		
 		conc2 = new JLabel("Concentration de la solution titree :");
-		conc2.setBounds(600,540,940,40);
-		conc2.setForeground(Color.blue);
+		conc2.setFont(new Font ("Bradley Hand ITC", Font.BOLD, 20));
+		conc2.setBounds((int)(l*(760.0/1938.0)),(int)(h*(440.0/1038.0)),(int)(l*(940.0/1938.0)),(int)(h*(40.0/1038.0)));
+		conc2.setForeground(Color.white);
 		Conteneur.add(conc2);
 		
 		demarrer = new JButton("Doser !");
-		demarrer.setBounds(1200,500,150,40);
+		demarrer.setBounds((int)(l*(1200.0/1938.0)),(int)(h*(500.0/1038.0)),(int)(l*(150.0/1938.0)),(int)(h*(40.0/1038.0)));
 		demarrer.addActionListener(this);
 		Conteneur.add(demarrer);
 
 
 		JLabel M = new JLabel(new ImageIcon("images/potion1.gif"));
-		M.setBounds(1000,200,800,500);
+		M.setBounds((int)(l*(1200.0/1938.0)),(int)(h*(270.0/1038.0)),(int)(l*(800.0/1938.0)),(int)(h*(500.0/1038.0)));
 		Conteneur.add(M);
 
 		JLabel N = new JLabel(new ImageIcon("images/labo11.png"));
-		N.setBounds(0,320,800,700);
+		N.setBounds((int)(l*(160.0/1938.0)),(int)(h*(300.0/1038.0)),(int)(l*(800.0/1938.0)),(int)(h*(700.0/1038.0)));
 		Conteneur.add(N);
 
-		JLabel L = new JLabel(new ImageIcon("images/laboratoire.JPEG"));
-		L.setBounds(1000,400,800,696);
+		JLabel L = new JLabel(new ImageIcon("images/laboratoire3.png"));
+		L.setBounds(0,0,this.getWidth(),this.getHeight());
 		Conteneur.add(L);
 
 		this.add(Conteneur);
 		Conteneur.repaint();
+		
+		
+		
 	}
 
 	public void actionPerformed(ActionEvent e){
 		if (e.getSource()==sol1){
 			type1=1;
+			System.out.println(type1);
 		}else if (e.getSource()==sol2){
 			type2=2;
+			System.out.println(type2);
 		} else if (e.getSource()==text1){
 			conce1 = Double.parseDouble(text1.getText());
+			System.out.println(conce1);
 		} else if (e.getSource()==text2){
 			conce2 = Double.parseDouble(text2.getText());
+			System.out.println(conce2);
 		} else if (e.getSource()==demarrer){
 			if ((type1 != 0) && (type2 != 0) && (conce1 != 0) && (conce2 != 0)){
-				R1 = new Reaction(this);
+				Reaction R1 = new Reaction(this);
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
-				FenetreDosage f = new FenetreDosage();
+				FenetreDosage f = new FenetreDosage(this);
 				//test(R1.calculpH(R1.solA, R1.solB));
 			} else {
 				JLabel erreur = new JLabel("erreur");
@@ -168,6 +174,3 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 		}
 	}
 }
-	
-
-

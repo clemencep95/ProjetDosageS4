@@ -29,9 +29,12 @@ public class FenetreDosage extends JFrame {
 	public JLabel titrage;
 
 	public Image reaction;
+	FenetrePrincipale fenetreParente;
 	
-	public FenetreDosage(){
+	public FenetreDosage(FenetrePrincipale laFenetreParente){
 		
+		fenetreParente = laFenetreParente;
+
 		this.setTitle("Dosage");
 		this.setLayout(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -54,14 +57,12 @@ public class FenetreDosage extends JFrame {
 
 			Graphics2D g2 = (Graphics2D) g;
 
-				
-	 
 			int nombreDePoints = 25;
-			for (int i = 0; i <= nombreDePoints-1; i++) {
-				double x1 = Reaction.tab[i].get(x);
-				double y1 = Reaction.tab[i+1].get(y);
-				double x2 = Reaction.tab[i+1].get(x);
-				double y2 = Reaction.tab[i+1].get(y);
+			for (int i = 0; i <= nombreDePoints-2; i++) {
+				double x1 = fenetreParente.R1.points[i].x;
+				double y1 = fenetreParente.R1.points[i+1].y;
+				double x2 = fenetreParente.R1.points[i+1].x;
+				double y2 = fenetreParente.R1.points[i+1].y;
 				
 				g2.draw(new Line2D.Double(x1, y1, x2, y2));
 			}

@@ -1,12 +1,12 @@
-public class Reaction extends FenetrePrincipale{
+public class Reaction {
     public Solution solA;
     public Solution solB;
     public double Veq;
     public double V0;
-    public Apoint [] points = new Apoint [26];
+    public APoint [] points = new APoint [26];
     FenetrePrincipale fenetreParente;
 
-    public Reaction (FenetrePrincipale laFenetreParente) {
+    public Reaction (FenetrePrincipale laFenetreParente){
         super();
         fenetreParente = laFenetreParente;
         solA = new Solution (fenetreParente.soltitrante.getText(),fenetreParente.conce1,true);
@@ -39,10 +39,10 @@ public class Reaction extends FenetrePrincipale{
     public void calculpH (Solution A, Solution B){
         double [] pH = new double [26];
         for (int i=1; i<=((int)Veq); i++){
-            tab[i]= APoint(i,(-Math.log10(((A.concentration*this.V0)-(B.concentration*i))/(this.V0+i))));
+            points[i]= new APoint(i,(-Math.log10(((A.concentration*this.V0)-(B.concentration*i))/(this.V0+i))));
         }
         for (int i=((int)Veq+1); i<26; i++){
-            tab[i]= APoint(i,(-Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)))));
+            points[i]=new APoint(i,(-Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)))));
         }
     }   
 }
