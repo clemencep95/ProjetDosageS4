@@ -3,7 +3,7 @@ public class Reaction {
     public Solution solB;
     public double Veq;
     public double V0;
-    public APoint [] points = new APoint [26];
+    public static APoint [] points = new APoint [26];
     FenetrePrincipale fenetreParente;
 
     public Reaction (FenetrePrincipale laFenetreParente){
@@ -13,6 +13,8 @@ public class Reaction {
         solB = new Solution (fenetreParente.soltitree.getText(),fenetreParente.conce2,false);
         V0 = calculV0(solA,solB);
         Veq = volumeEquivalence(solA,solB);
+        calculpH(solA,solB);
+        FenetreDosage f = new FenetreDosage(fenetreParente);
     }
 
     public double volumeEquivalence (Solution A, Solution B){
@@ -37,12 +39,12 @@ public class Reaction {
     }
 
     public void calculpH (Solution A, Solution B){
-        double [] pH = new double [26];
-        for (int i=1; i<=((int)Veq); i++){
-            points[i]= new APoint(i,(-Math.log10(((A.concentration*this.V0)-(B.concentration*i))/(this.V0+i))));
+        for (int i=1; i<=((int)(Veq*1000)); i++){
+            points[i]= new APoint(i,(-Math.log10(((A.concentration*this.V0)-(B.concentration*(i*0.001)))/(this.V0+(i*0.001)))));
         }
-        for (int i=((int)Veq+1); i<26; i++){
-            points[i]=new APoint(i,(-Math.log10(Math.pow(10,-14)/(B.concentration*(i-Veq)/(V0+i)))));
+        for (int i=((int)(Veq*1000)+1); i<26; i++){
+            points[i]=new APoint(i,(-Math.log10(Math.pow(10,-14)/(B.concentration*((i*0.001)-Veq)/(V0+(i*0.001))))));
         }
-    }   
+    }  
 }
+

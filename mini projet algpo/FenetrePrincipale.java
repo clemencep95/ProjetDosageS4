@@ -36,12 +36,14 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 	public double conce2 ;
 	public JLabel scientifique;
 	public JPanel contentPane;
-            public JLabel imageLabel = new JLabel();
-            public JLabel headerLabel = new JLabel();
+    public JLabel imageLabel = new JLabel();
+    public JLabel headerLabel = new JLabel();
 	public JLabel soltitrante;
 	public JLabel soltitree;
 	public Reaction R1;
 	public JLabel L;
+	public static double l;
+    public static double h;
     
 	public FenetrePrincipale() {
 		
@@ -161,7 +163,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener {
 				Reaction R1 = new Reaction(this);
 				System.out.println("V0 = "+ R1.V0);
 				System.out.println("Veq = "+ R1.Veq);
-				FenetreDosage f = new FenetreDosage(this);
 				//test(R1.calculpH(R1.solA, R1.solB));
 			} else {
 				JLabel erreur = new JLabel("erreur");

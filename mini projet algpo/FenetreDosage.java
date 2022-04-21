@@ -25,10 +25,9 @@ public class FenetreDosage extends JFrame {
 	public JLabel conc2;
 	public JLabel conc1;
 	public JLabel VolIns;
-
 	public JLabel titrage;
-
 	public Image reaction;
+	public JLabel titreGraph;
 	FenetrePrincipale fenetreParente;
 	
 	public FenetreDosage(FenetrePrincipale laFenetreParente){
@@ -49,21 +48,32 @@ public class FenetreDosage extends JFrame {
 		E.setBounds(10,30,1500,100);
 		Conteneur.add(E);
 
+		titreGraph = new JLabel ("Graphique representant l'evolution du pH de la solution en fonction du volume de la solution insere");
+        titreGraph.setFont(new Font("Bradley Hand ITC", Font.BOLD, 30));
+        titreGraph.setBounds(100,500,1000,300);
+        titreGraph.setForeground(Color.white);
+        Conteneur.add(titreGraph);
+		
+		repaint();
 		this.add(Conteneur);
+		repaint();
 	}
 
-		public void paint (Graphics g){
+	public void paint (Graphics g){
+ 
+		Graphics2D g2 = (Graphics2D) g;
+		g2.setPaint(Color.white);
+	   
 
-			Graphics2D g2 = (Graphics2D) g;
-
-			int nombreDePoints = 25;
-			for (int i = 1; i <= nombreDePoints-2; i++) {
-				double x1 = fenetreParente.R1.points[i].x;
-				double y1 = fenetreParente.R1.points[i].y;
-				double x2 = fenetreParente.R1.points[i+1].x;
-				double y2 = fenetreParente.R1.points[i+1].y;
-				
-				g2.draw(new Line2D.Double(x1, y1, x2, y2));
-			}
+		int nombreDePoints = 25;
+		for (int i = 1; i <= nombreDePoints-2; i++) {
+			int x1 = (int)(i*(FenetrePrincipale.l)/26);
+			int y1 = (int)((Reaction.points[i].y)*((FenetrePrincipale.h)*590/1550)/((Reaction.points[25].y))+((FenetrePrincipale.h)*150/1550));
+			int x2 = (int)((i+1)*(FenetrePrincipale.l)/26);
+			int y2 = (int)((Reaction.points[i+1].y)*((FenetrePrincipale.h)*590/1550)/((Reaction.points[25].y))+((FenetrePrincipale.h)*150/1550));
+			g2.fillOval(x1, y1, 10, 10);
+			g2.fillOval(x2, y2, 10, 10);
+			g2.draw(new Line2D.Double(x1, y1, x2, y2));
 		}
+	}
 }
